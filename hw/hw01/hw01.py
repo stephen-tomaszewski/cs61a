@@ -19,7 +19,7 @@ def a_plus_abs_b(a, b):
     return f(a, b)
 
 # Q2
-
+from operator import mul
 
 def two_of_three(a, b, c):
     """Return x*x + y*y, where x and y are the two largest members of the
@@ -34,7 +34,7 @@ def two_of_three(a, b, c):
     >>> two_of_three(5, 5, 5)
     50
     """
-    return _____
+    return add(mul(max(a,b,c), max(a, b, c)), mul())
 
 # Q3
 
@@ -49,7 +49,16 @@ def largest_factor(n):
     >>> largest_factor(13) # factor is 1 since 13 is prime
     1
     """
-    "*** YOUR CODE HERE ***"
+    i = 1
+    while n > i:
+        if n % i == 0:
+            largest = i
+            i += 1
+        elif n % i != 0:
+            i += 1
+        else:
+            largest = 1
+    return largest
 
 # Q4
 
@@ -98,15 +107,17 @@ def with_if_function():
 
 
 def c():
-    "*** YOUR CODE HERE ***"
+    return False
 
 
 def t():
-    "*** YOUR CODE HERE ***"
+    print(1)
+    return
 
 
 def f():
-    "*** YOUR CODE HERE ***"
+    print(2)
+    return
 
 # Q5
 
@@ -126,7 +137,20 @@ def hailstone(n):
     >>> a
     7
     """
-    "*** YOUR CODE HERE ***"
+    i = 1
+
+    while n >= 1:
+        print(n)
+        if n % 2 == 0:
+            n = int(n / 2)
+        else:
+            n = n * 3 + 1
+        i += 1
+        if n == 1:
+            print(n)
+            break
+    return i
+
 
 
 # Q6

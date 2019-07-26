@@ -35,16 +35,20 @@ def double_eights(n):
     >>> double_eights(80808080)
     False
     """
-    "*** YOUR CODE HERE ***"
-    curr, old = []
-    for i in len(n):
-        curr = n[i]
-        if curr == 8:
-            old = curr
+    i = 0
+    while i <= len(n):
+        if n < 10:
+            return False
+
+        all_but_last, last = n // 10, n % 10
+        if all_but_last == last:
+            return True
         else:
-            old = curr
-    return
-        
+            return double_eights(all_but_last)
+        i += 1
+    return False
+
+            
 
 # Guessing Game
 
